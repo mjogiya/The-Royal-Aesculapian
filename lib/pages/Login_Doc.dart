@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:theroyalaesculapian/pages/Dashboard/Dashboard.dart';
 
-import 'Dashboard/Dashboard.dart';
-
-class login extends StatefulWidget {
-  const login({Key? key}) : super(key: key);
+class Login_Doctor extends StatefulWidget {
+  const Login_Doctor({Key? key}) : super(key: key);
 
   @override
-  State<login> createState() => _loginState();
+  State<Login_Doctor> createState() => _Login_DoctorState();
 }
 
-class _loginState extends State<login> {
+class _Login_DoctorState extends State<Login_Doctor> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +17,7 @@ class _loginState extends State<login> {
             backgroundColor: Color.fromARGB(255, 3, 55, 57),
             appBar: AppBar(
               backgroundColor: Color.fromARGB(255, 3, 55, 30),
-              title: Text('Login as Patient'),
+              title: Text('Login as Doctor'),
             ),
             body: Center(
 
@@ -39,16 +38,16 @@ class _loginState extends State<login> {
                       style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
 
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(90.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(90.0),
+                          ),
+                          focusedBorder: OutlineInputBorder(
 
-                          borderSide: BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(90.0),
-                        ),
-                        labelText: 'Email',
+                            borderSide: BorderSide(color: Colors.white),
+                            borderRadius: BorderRadius.circular(90.0),
+                          ),
+                          labelText: 'Email',
                           labelStyle: TextStyle(color: Colors.white, letterSpacing: 3.0)
                       ),
                     ),
@@ -59,17 +58,17 @@ class _loginState extends State<login> {
                       style: TextStyle(color: Colors.white),
                       obscureText: true,
                       decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
                             borderRadius: BorderRadius.circular(90.0),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
 
-                          borderRadius: BorderRadius.circular(90.0),
-                        ),
-                        labelText: 'Password',
-                        labelStyle: TextStyle(color: Colors.white, letterSpacing: 3.0)
+                            borderRadius: BorderRadius.circular(90.0),
+                          ),
+                          labelText: 'Password',
+                          labelStyle: TextStyle(color: Colors.white, letterSpacing: 3.0)
 
                       ),
                     ),
@@ -84,15 +83,13 @@ class _loginState extends State<login> {
                         ),
                         child: const Text('LOG IN'),
                         onPressed: () {
-                          Navigator.of(context).pushReplacement(new MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return Dashboard();
-                            },
-                          ));
+
                         },
                       )),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+
+                    },
                     child: Text(
                       'Forgot Password?',
                       style: TextStyle(color: Colors.grey[600]),
