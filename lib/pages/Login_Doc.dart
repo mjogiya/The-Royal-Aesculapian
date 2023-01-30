@@ -26,6 +26,10 @@ class _Login_DoctorState extends State<Login_Doctor> {
                 mainAxisAlignment: MainAxisAlignment.center,
 
                 children: <Widget>[
+                  Image(image: AssetImage('Logos/doctor.png'),
+                    height: 200,
+                    width: 200,)
+                  ,
                   Container(
                     padding: const EdgeInsets.fromLTRB(20, 20, 20, 70),
 

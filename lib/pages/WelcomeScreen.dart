@@ -35,13 +35,14 @@ margin: const EdgeInsets.fromLTRB(0, 80, 0, 20),
             TextButton(
 
               onPressed: () {
-                Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                Navigator.of(context).push(new MaterialPageRoute(
                   builder: (BuildContext context) {
                     return login();
                   },
                 ));
               },
               style: TextButton.styleFrom(
+                shape: const StadiumBorder(),
                 foregroundColor: Colors.white,
                 backgroundColor: Color.fromRGBO(34, 93, 42, 100),
                 padding: const EdgeInsets.all(20),
@@ -62,6 +63,7 @@ margin: const EdgeInsets.fromLTRB(0, 80, 0, 20),
             TextButton(
               onPressed: () {},
               style: TextButton.styleFrom(
+                  shape: const StadiumBorder(),
                   foregroundColor: Colors.white,
                   backgroundColor: Color.fromRGBO(34, 93, 42, 100),
                   padding: const EdgeInsets.all(20),
@@ -76,13 +78,14 @@ margin: const EdgeInsets.fromLTRB(0, 80, 0, 20),
               child:
             TextButton(
               onPressed: () {
-                Navigator.of(context).pushReplacement(new MaterialPageRoute(
+                Navigator.of(context).push(new MaterialPageRoute(
                   builder: (BuildContext context) {
                     return Login_Doctor();
                   },
                 ));
               },
               style: TextButton.styleFrom(
+                  shape: const StadiumBorder(),
                   foregroundColor: Colors.white,
                   backgroundColor: Color.fromRGBO(34, 93, 42, 100),
                   padding: const EdgeInsets.all(20),
