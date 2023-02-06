@@ -13,6 +13,7 @@ class _MedicalsState extends State<Medicals> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 3, 55, 57),
           title: Text("Medicals"),
         ),
       ),

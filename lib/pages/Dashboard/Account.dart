@@ -115,6 +115,19 @@ class _AccountState extends State<Account> {
                   title: Text('Wallet'),
                   trailing: Icon(Icons.arrow_right, size: 30,color: Colors.grey,),
                 ),
+                ListTile(
+                  leading: Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(100),
+                        color: Colors.grey
+                    ),
+                    child: Icon(Icons.logout,),
+                  ),
+                  title: Text('Log Out'),
+                  trailing: Icon(Icons.arrow_right, size: 30,color: Colors.grey,),
+                ),
               ],
             ),
           )
