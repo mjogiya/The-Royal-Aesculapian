@@ -8,7 +8,7 @@ void main() {
 //  initialRoute: First_Screen(),
     routes: {
       '/': (context) => Splashscreen(),
-  //    '/register': (context) => register(),
+      //    '/register': (context) => register(),
     },
   ));
 }
