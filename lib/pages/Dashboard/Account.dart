@@ -14,7 +14,7 @@ class _AccountState extends State<Account> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Account page"),
+          title: Text("Account"),
           backgroundColor: Color.fromARGB(255, 3, 55, 40),
         ),
         body: SingleChildScrollView(
