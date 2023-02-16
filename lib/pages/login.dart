@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Dashboard/Dashboard.dart';
+import 'Patient/Dashboard.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/Dashboard/Doctors.dart';
-import 'package:theroyalaesculapian/pages/Dashboard/Home.dart';
-import 'package:theroyalaesculapian/pages/Dashboard/Medicals.dart';
-import 'package:theroyalaesculapian/pages/Dashboard/Medicine.dart';
+import 'package:theroyalaesculapian/pages/Patient/Doctors.dart';
+import 'package:theroyalaesculapian/pages/Patient/Home.dart';
+import 'package:theroyalaesculapian/pages/Patient/Medicals.dart';
+import 'package:theroyalaesculapian/pages/Patient/Medicine.dart';
 
 import 'Account.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/Dashboard/Account/Editprofile.dart';
+import 'package:theroyalaesculapian/pages/Patient/Account/Editprofile.dart';
 
 class Account extends StatefulWidget {
   const Account({Key? key}) : super(key: key);

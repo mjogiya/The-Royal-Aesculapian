@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/Dashboard/Search/Category.dart';
+import 'package:theroyalaesculapian/pages/Patient/Search/Category.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
