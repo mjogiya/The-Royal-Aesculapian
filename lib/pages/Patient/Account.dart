@@ -28,12 +28,12 @@ class _AccountState extends State<Account> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(100),
                   child: Image(
-                    image: AssetImage('Logos/doctor.png'),
+                    image: AssetImage('Logos/patient1.png'),
                   ),
                 ),
               ),
               SizedBox(height: 10),
-              Text('Mayur Jogiya'),
+              Text('Mayur Jogiya (Patient)'),
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {

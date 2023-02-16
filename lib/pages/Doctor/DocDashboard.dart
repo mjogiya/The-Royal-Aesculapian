@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/Patient/Doctors.dart';
-import 'package:theroyalaesculapian/pages/Patient/Home.dart';
-import 'package:theroyalaesculapian/pages/Patient/Medicals.dart';
-import 'package:theroyalaesculapian/pages/Patient/Medicine.dart';
-import '../Patient/Account.dart';
+import 'package:theroyalaesculapian/pages/Doctor/Patient.dart';
+import 'package:theroyalaesculapian/pages/Doctor/Home.dart';
+import 'package:theroyalaesculapian/pages/Doctor/Medicals.dart';
+import 'package:theroyalaesculapian/pages/Doctor/Medicine.dart';
+import 'package:theroyalaesculapian/pages/Doctor/Account.dart';
 
 class DocDashboard extends StatefulWidget {
   const DocDashboard({Key? key}) : super(key: key);
@@ -16,7 +16,7 @@ class _DocDashboardState extends State<DocDashboard> {
   int _navIndex = 2;
   List<Widget> _screens = [
     Medicals(),
-    Doctors(),
+    Patient(),
     Home(),
     Medicine(),
     Account(),
@@ -35,7 +35,7 @@ class _DocDashboardState extends State<DocDashboard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.people),
-            label: "Doctors",
+            label: "Patients",
             backgroundColor: Color.fromARGB(255, 3, 55, 57),
           ),
           BottomNavigationBarItem(

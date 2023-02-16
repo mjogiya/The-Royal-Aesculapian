@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class Doctors extends StatefulWidget {
-  const Doctors({Key? key}) : super(key: key);
+class Patient extends StatefulWidget {
+  const Patient({Key? key}) : super(key: key);
 
   @override
-  State<Doctors> createState() => _DoctorsState();
+  State<Patient> createState() => _PatientState();
 }
 
-class _DoctorsState extends State<Doctors> {
+class _PatientState extends State<Patient> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 3, 55, 57),
-          title: Text("Doctors"),
+          title: Text("Patient"),
         ),
       ),
     );

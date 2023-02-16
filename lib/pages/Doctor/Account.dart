@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/Patient/Account/Editprofile.dart';
+import 'package:theroyalaesculapian/pages/Doctor/Account/Editprofile.dart';
 
 class Account extends StatefulWidget {
   const Account({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _AccountState extends State<Account> {
                 ),
               ),
               SizedBox(height: 10),
-              Text('Mayur Jogiya'),
+              Text('Mayur Jogiya (Doctor)'),
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
@@ -50,25 +50,6 @@ class _AccountState extends State<Account> {
               ),
               const Divider(),
               SizedBox(height: 20),
-              ListTile(
-                leading: Container(
-                  width: 40,
-                  height: 40,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(100),
-                      color: Colors.grey),
-                  child: Icon(
-                    Icons.book,
-                    color: Colors.black,
-                  ),
-                ),
-                title: Text('Appointments'),
-                trailing: Icon(
-                  Icons.arrow_right,
-                  size: 30,
-                  color: Colors.grey,
-                ),
-              ),
               ListTile(
                 leading: Container(
                   width: 40,
