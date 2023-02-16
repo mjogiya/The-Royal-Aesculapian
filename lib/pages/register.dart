@@ -17,7 +17,7 @@ class _registerState extends State<register> {
             backgroundColor: Color.fromARGB(255, 3, 55, 57),
             appBar: AppBar(
               backgroundColor: Color.fromARGB(255, 3, 55, 30),
-              title: Text('Login as Patient'),
+              title: Text('Register as Patient'),
             ),
             body: Center(
 
@@ -26,6 +26,10 @@ class _registerState extends State<register> {
                 mainAxisAlignment: MainAxisAlignment.center,
 
                 children: <Widget>[
+                  Image(image: AssetImage('Logos/patient1.png'),
+                  height: 200,
+                  width: 200,)
+                  ,
                   Container(
                     padding: const EdgeInsets.fromLTRB(20, 20, 20, 70),
 
@@ -47,7 +51,8 @@ class _registerState extends State<register> {
                           borderRadius: BorderRadius.circular(90.0),
                         ),
 
-                        labelText: 'Email',
+                        labelText: 'Full Name',
+                        labelStyle: TextStyle(color: Colors.white, letterSpacing: 3.0)
 
                       ),
                     ),
@@ -68,7 +73,30 @@ class _registerState extends State<register> {
 
                           borderRadius: BorderRadius.circular(90.0),
                         ),
-                        labelText: 'Password',
+                        labelText: 'Date Of Birth',
+                        labelStyle: TextStyle(color: Colors.white, letterSpacing: 3.0)
+
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                    child: TextField(
+                      style: TextStyle(color: Colors.white),
+                      obscureText: true,
+
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(90.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+
+                          borderRadius: BorderRadius.circular(90.0),
+                        ),
+                        labelText: 'Gender',
+                        labelStyle: TextStyle(color: Colors.white, letterSpacing: 3.0)
 
                       ),
                     ),
@@ -81,7 +109,7 @@ class _registerState extends State<register> {
                           minimumSize: const Size.fromHeight(50),
                           backgroundColor: Color.fromARGB(255, 34, 93, 42),
                         ),
-                        child: const Text('Log In'),
+                        child: const Text('Register'),
                         onPressed: () {},
                       )),
                   TextButton(
