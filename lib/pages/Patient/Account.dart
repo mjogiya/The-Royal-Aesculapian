@@ -14,6 +14,10 @@ class _AccountState extends State<Account> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () {},
+          ),
           title: Text("Account"),
           backgroundColor: Color.fromARGB(255, 3, 55, 40),
         ),

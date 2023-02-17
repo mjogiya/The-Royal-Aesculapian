@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:theroyalaesculapian/pages/Login_Doc.dart';
+import 'package:theroyalaesculapian/pages/Patient/Medicine.dart';
 import 'package:theroyalaesculapian/pages/login.dart';
 import 'package:theroyalaesculapian/pages/register.dart';
 
