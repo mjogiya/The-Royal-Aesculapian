@@ -30,7 +30,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             Container(
               width: 300,
-              margin: const EdgeInsets.fromLTRB(0, 80, 0, 20),
+              margin: const EdgeInsets.fromLTRB(0, 50, 0, 20),
               child: TextButton(
                 onPressed: () {
                   Navigator.of(context).push(new MaterialPageRoute(
@@ -71,9 +71,20 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: const Text("Register as Patient"),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Container(
+                width: 300,
+                height: 5,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+              ),
+            ),
             Container(
               width: 300,
-              margin: const EdgeInsets.fromLTRB(0, 50, 0, 20),
+              margin: const EdgeInsets.fromLTRB(0, 30, 0, 20),
               child: TextButton(
                 onPressed: () {
                   Navigator.of(context).push(new MaterialPageRoute(
