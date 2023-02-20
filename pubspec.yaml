@@ -64,7 +64,15 @@ flutter:
     - Logos/FIRST.jpeg
     - Logos/patient1.png
     - Logos/doctor.png
-  # An image asset can refer to one or more resolution-specific "variants", see
+    - Logos/Medicines/Covid.jpeg
+    - Logos/Medicines/Skincare.jpeg
+    - Logos/Medicines/Vitamin.jpeg
+    - Logos/Medicines/HealthyFood.jpeg
+    - Logos/Medicines/BabyCare.jpeg
+    - Logos/Medicines/PainRelif.jpeg
+    - Logos/Medicines/Protein.jpeg
+
+        # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
   # For details regarding adding assets from package dependencies, see

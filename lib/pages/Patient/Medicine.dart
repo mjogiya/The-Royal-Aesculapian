@@ -35,7 +35,7 @@ class _MedicineState extends State<Medicine> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage('Logos/doctor.png'),
+                        image: AssetImage('Logos/Medicines/Covid.jpeg'),
                         height: 100,
                       ),
                       Text(
@@ -58,7 +58,7 @@ class _MedicineState extends State<Medicine> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage('Logos/doctor.png'),
+                        image: AssetImage('Logos/Medicines/Skincare.jpeg'),
                         height: 100,
                       ),
                       Text(
@@ -81,7 +81,7 @@ class _MedicineState extends State<Medicine> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage('Logos/doctor.png'),
+                        image: AssetImage('Logos/Medicines/Vitamin.jpeg'),
                         height: 100,
                       ),
                       Text(
@@ -104,7 +104,7 @@ class _MedicineState extends State<Medicine> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage('Logos/doctor.png'),
+                        image: AssetImage('Logos/Medicines/HealthyFood.jpeg'),
                         height: 100,
                       ),
                       Text(
@@ -127,7 +127,7 @@ class _MedicineState extends State<Medicine> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage('Logos/doctor.png'),
+                        image: AssetImage('Logos/Medicines/BabyCare.jpeg'),
                         height: 100,
                       ),
                       Text(
@@ -150,7 +150,7 @@ class _MedicineState extends State<Medicine> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage('Logos/doctor.png'),
+                        image: AssetImage('Logos/Medicines/PainRelif.jpeg'),
                         height: 100,
                       ),
                       Text(
@@ -164,6 +164,7 @@ class _MedicineState extends State<Medicine> {
                     ],
                   ),
                 ),
+
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -173,30 +174,7 @@ class _MedicineState extends State<Medicine> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image(
-                        image: AssetImage('Logos/doctor.png'),
-                        height: 100,
-                      ),
-                      Text(
-                        "",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                      Text(
-                        "Diabetic Care",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 229, 233, 241),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage('Logos/doctor.png'),
+                        image: AssetImage('Logos/Medicines/Protein.jpeg'),
                         height: 100,
                       ),
                       Text(
