@@ -14,10 +14,6 @@ class _MedicalsState extends State<Medicals> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 3, 55, 57),
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {},
-          ),
           title: Text("Medicals"),
         ),
       ),

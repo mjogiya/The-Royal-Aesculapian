@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Widgets/Patients_Card.dart';
 
 class Patient extends StatefulWidget {
   const Patient({Key? key}) : super(key: key);
@@ -14,11 +15,26 @@ class _PatientState extends State<Patient> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 3, 55, 57),
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {},
-          ),
           title: Text("Patient"),
+        ),
+        body: GridView(
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 2,
+            childAspectRatio: .25 * 3,
+          ),
+          children: <Widget>[
+            Patients(),
+            Patients(),
+            Patients(),
+            Patients(),
+            Patients(),
+            Patients(),
+            Patients(),
+
+
+          ],
         ),
       ),
     );

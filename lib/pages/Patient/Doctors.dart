@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/Widgets/Specialistdoc.dart';
+import 'package:theroyalaesculapian/pages/Widgets/Doctors_Card.dart';
 
 class Doctors extends StatefulWidget {
   const Doctors({Key? key}) : super(key: key);
@@ -15,16 +15,12 @@ class _DoctorsState extends State<Doctors> {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 3, 55, 57),
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {},
-          ),
           title: Text("Doctors"),
         ),
         body: GridView(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
+            crossAxisCount: 2,
             crossAxisSpacing: 2,
             childAspectRatio: .25 * 3,
           ),
