@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Widgets/Patients_Card.dart';
 
 class Patient extends StatefulWidget {
   const Patient({Key? key}) : super(key: key);
@@ -25,13 +24,13 @@ class _PatientState extends State<Patient> {
             childAspectRatio: .25 * 3,
           ),
           children: <Widget>[
-            Patients(),
-            Patients(),
-            Patients(),
-            Patients(),
-            Patients(),
-            Patients(),
-            Patients(),
+            Patients(catImage: 'Logos/patient1.png', title: 'Mayur Jogiya' ),
+            Patients(catImage: 'Logos/Doctor/Covid.jpg', title: 'Mansi Kakadiya' ),
+            Patients(catImage: 'Logos/Doctor/Covid.jpg', title: 'Romil Desai' ),
+            Patients(catImage: 'Logos/Doctor/Covid.jpg', title: 'Hinali Dhameliya' ),
+            Patients(catImage: 'Logos/Doctor/Covid.jpg', title: 'Darshit Kothari' ),
+            Patients(catImage: 'Logos/Doctor/Covid.jpg', title: 'Vishwa trada' ),
+            Patients(catImage: 'Logos/Doctor/Covid.jpg', title: 'Mayur Jogiya' ),
 
 
           ],
@@ -40,3 +39,40 @@ class _PatientState extends State<Patient> {
     );
   }
 }
+
+Widget Patients({catImage, title}) {
+  return AspectRatio(
+      aspectRatio: 2 / 2,
+      child: Hero(
+        tag: title,
+        child: GestureDetector(
+          onTap: () {
+
+          },
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: 120,
+                width: 110,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                      image: AssetImage(
+                        catImage,
+                      ),
+                      fit: BoxFit.cover),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Text(
+                  title,
+                  style: TextStyle(fontWeight: FontWeight.w500),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ));
+}
+

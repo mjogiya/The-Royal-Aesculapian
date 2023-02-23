@@ -15,7 +15,7 @@ class _AccountState extends State<Account> {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Account"),
-          backgroundColor: Color.fromARGB(255, 3, 55, 40),
+          backgroundColor: Color.fromARGB(255, 3, 55, 57),
         ),
         body: SingleChildScrollView(
             child: Container(

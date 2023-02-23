@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theroyalaesculapian/pages/Patient/Skincare.dart';
 
 class Medicine extends StatefulWidget {
   const Medicine({Key? key}) : super(key: key);
@@ -22,168 +23,13 @@ class _MedicineState extends State<Medicine> {
             padding: const EdgeInsets.all(15),
             child: GridView(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 229, 233, 241),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage('Logos/Medicines/Covid.jpeg'),
-                        height: 100,
-                      ),
-                      Text(
-                        "Covid",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                      Text(
-                        "Essentials",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 229, 233, 241),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage('Logos/Medicines/Skincare.jpeg'),
-                        height: 100,
-                      ),
-                      Text(
-                        "",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                      Text(
-                        "Skincare",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 229, 233, 241),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage('Logos/Medicines/Vitamin.jpeg'),
-                        height: 100,
-                      ),
-                      Text(
-                        "Vitamins and",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                      Text(
-                        "Minerals",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 229, 233, 241),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage('Logos/Medicines/HealthyFood.jpeg'),
-                        height: 100,
-                      ),
-                      Text(
-                        "Health Food",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                      Text(
-                        "and Drinks",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 229, 233, 241),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage('Logos/Medicines/BabyCare.jpeg'),
-                        height: 100,
-                      ),
-                      Text(
-                        "",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                      Text(
-                        "Baby Care",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 229, 233, 241),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage('Logos/Medicines/PainRelif.jpeg'),
-                        height: 100,
-                      ),
-                      Text(
-                        "",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                      Text(
-                        "Pain Relief",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
-
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 229, 233, 241),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image(
-                        image: AssetImage('Logos/Medicines/Protein.jpeg'),
-                        height: 100,
-                      ),
-                      Text(
-                        "Protein and",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                      Text(
-                        "Supplements",
-                        style: TextStyle(color: Colors.black, fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ),
+                makeCategory(catImage: 'Logos/Medicines/Covid.jpeg', tag: "Covid \n Essentials", title: "Covid \n Essentials", context: context, pageUrl: Skincare() ),
+                makeCategory(catImage: 'Logos/Medicines/Skincare.jpeg', tag: "Skin Care", title: "Skin Care", pageUrl: Skincare()),
+                makeCategory(catImage: 'Logos/Medicines/Vitamin.jpeg', tag: "Vitamin and \n Minarals", title: "Vitamin and \n Minarals", context: context, pageUrl: Skincare()),
+                makeCategory(catImage: 'Logos/Medicines/HealthyFood.jpeg', tag: "Health Food \n and Drinks", title: "Health Food and Drinks", context: context, pageUrl: Skincare()),
+                makeCategory(catImage: 'Logos/Medicines/PainRelif.jpeg', tag: "Pain Relief", title: "Pain Relief", context: context, pageUrl: Skincare()),
+                makeCategory(catImage: 'Logos/Medicines/Protein.jpeg', tag: "Protein and \n ", title: "Supplements", context: context, pageUrl: Skincare()),
+                makeCategory(catImage: 'Logos/Medicines/Skincare.jpeg', tag: "Skin Care", title: "Skin Care", context: context, pageUrl: Skincare()),
               ],
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
@@ -193,4 +39,44 @@ class _MedicineState extends State<Medicine> {
       ),
     );
   }
+}
+
+Widget makeCategory({catImage, title, tag, context, pageUrl}) {
+  return AspectRatio(
+      aspectRatio: 2 / 2,
+      child: Hero(
+        tag: title,
+        child: GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(new MaterialPageRoute(
+              builder: (BuildContext context) {
+                return pageUrl;
+              },
+            ));
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Color.fromARGB(255, 229, 233, 241),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image(
+                  image: AssetImage(catImage),
+                  height: 100,
+                ),
+                Text(
+                  "",
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+                Text(
+                  title,
+                  style: TextStyle(color: Colors.black, fontSize: 20),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ));
 }
