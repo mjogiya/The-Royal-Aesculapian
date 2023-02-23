@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theroyalaesculapian/pages/Patient/Skincare.dart';
 
 class Medicine extends StatefulWidget {
   const Medicine({Key? key}) : super(key: key);
@@ -160,7 +161,6 @@ class _MedicineState extends State<Medicine> {
                     ],
                   ),
                 ),
-
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -186,7 +186,10 @@ class _MedicineState extends State<Medicine> {
                 ),
               ],
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+              ),
             ),
           ),
         ),

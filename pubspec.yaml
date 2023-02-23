@@ -71,6 +71,19 @@ flutter:
     - Logos/Medicines/BabyCare.jpeg
     - Logos/Medicines/PainRelif.jpeg
     - Logos/Medicines/Protein.jpeg
+    - Logos/Doctor/Covid.jpg
+    - Logos/Doctor/Skin.jpg
+    - Logos/Doctor/womensHealth.jpg
+    - Logos/Doctor/generalPhysician.jpg
+    - Logos/Doctor/dentalCare.jpg
+    - Logos/Doctor/childSpecialist.jpg
+    - Logos/Doctor/homeopathy.jpg
+    - Logos/Doctor/eyeSpecialist.jpg
+    - Logos/Doctor/heart.jpg
+    - Logos/Doctor/ayurveda.jpg
+    - Logos/Doctor/physiotherapy.jpg
+    - Logos/Doctor/Cancer.jpg
+
 
         # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
