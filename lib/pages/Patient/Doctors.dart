@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:theroyalaesculapian/pages/Patient/Selectdoctor.dart';
+import 'package:theroyalaesculapian/pages/Patient/Skincare.dart';
 
 class Doctors extends StatefulWidget {
   const Doctors({Key? key}) : super(key: key);
@@ -81,7 +85,11 @@ class _DoctorsState extends State<Doctors> {
           tag: title,
           child: GestureDetector(
             onTap: () {
-
+              scheduleMicrotask(() {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Selectdoctor(),
+                ));
+              });
             },
             child: Column(
               children: <Widget>[

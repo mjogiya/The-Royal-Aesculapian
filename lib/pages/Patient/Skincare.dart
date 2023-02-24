@@ -38,15 +38,13 @@ class _SkincareState extends State<Skincare> {
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 3, 55, 57),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () {
-
-            },
+            icon: Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () {},
           ),
           title: Text(
             "Skincare",
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
           actions: [
@@ -54,19 +52,18 @@ class _SkincareState extends State<Skincare> {
                 onPressed: () {},
                 icon: const Icon(
                   Icons.search,
-                  color: Colors.black,
+                  color: Colors.white,
                 )),
             IconButton(
                 onPressed: () {},
                 icon: const Icon(
                   Icons.add_shopping_cart_outlined,
-                  color: Colors.black,
+                  color: Colors.white,
                 )),
           ],
         ),
         body: ListView.builder(
             itemCount: imgList.length,
-
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {},
@@ -83,8 +80,8 @@ class _SkincareState extends State<Skincare> {
                         child: Image.asset(imgList[index]),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 10.0, vertical: 0),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 10.0, vertical: 0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
