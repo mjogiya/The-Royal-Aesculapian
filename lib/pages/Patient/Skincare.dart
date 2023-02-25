@@ -39,7 +39,9 @@ class _SkincareState extends State<Skincare> {
           backgroundColor: Color.fromARGB(255, 3, 55, 57),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
           ),
           title: Text(
             "Skincare",
@@ -66,7 +68,9 @@ class _SkincareState extends State<Skincare> {
             itemCount: imgList.length,
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  
+                },
                 child: Card(
                   margin: EdgeInsets.only(
                     top: 10,

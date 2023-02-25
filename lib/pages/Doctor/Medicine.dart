@@ -25,7 +25,7 @@ class _MedicineState extends State<Medicine> {
             padding: const EdgeInsets.all(15),
             child: GridView(
               children: [
-                makeCategory(catImage: 'Logos/Medicines/Covid.jpeg', tag: "Covid \n Essentials", title: "Covid \n Essentials", context: context, pageUrl: Skincare() ),
+                makeCategory(catImage: 'Logos/Medicines/Covid.jpeg', tag: "Covid \n Essentials", title: "Covid \n Essentials", context: context, pageUrl: Skincare()),
                 makeCategory(catImage: 'Logos/Medicines/Skincare.jpeg', tag: "Skin Care", title: "Skin Care", pageUrl: Skincare()),
                 makeCategory(catImage: 'Logos/Medicines/Vitamin.jpeg', tag: "Vitamin and \n Minarals", title: "Vitamin and \n Minarals", context: context, pageUrl: Skincare()),
                 makeCategory(catImage: 'Logos/Medicines/HealthyFood.jpeg', tag: "Health Food \n and Drinks", title: "Health Food and Drinks", context: context, pageUrl: Skincare()),

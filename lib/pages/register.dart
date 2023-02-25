@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/WelcomeScreen.dart';
 
 class register extends StatefulWidget {
   const register({Key? key}) : super(key: key);
@@ -19,8 +18,7 @@ class _registerState extends State<register> {
               leading: IconButton(
                 icon: Icon(Icons.arrow_back, color: Colors.white),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const WelcomeScreen()));
+                  Navigator.of(context).pop();
                 },
               ),
               title: Text('Register as Patient'),

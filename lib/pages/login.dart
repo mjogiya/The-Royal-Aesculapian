@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/WelcomeScreen.dart';
-
 import 'Patient/Dashboard.dart';
 
 class login extends StatefulWidget {
@@ -21,8 +19,7 @@ class _loginState extends State<login> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => const WelcomeScreen()));
+            Navigator.of(context).pop();
           },
         ),
         title: Text('Login as Patient'),

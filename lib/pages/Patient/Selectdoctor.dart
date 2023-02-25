@@ -36,7 +36,9 @@ class _SelectdoctorState extends State<Selectdoctor> {
           backgroundColor: Color.fromARGB(255, 3, 55, 57),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
           ),
           title: Text(
             "Select Doctor",
@@ -55,7 +57,7 @@ class _SelectdoctorState extends State<Selectdoctor> {
                     top: 10,
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
@@ -79,7 +81,7 @@ class _SelectdoctorState extends State<Selectdoctor> {
                               height: 5,
                             ),
                             Container(
-                              width: 290,
+                              width: 280,
                               child: Text(
                                 descList[index],
                                 style:

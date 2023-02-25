@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:theroyalaesculapian/pages/Doctor/DocDashboard.dart';
-import 'package:theroyalaesculapian/pages/WelcomeScreen.dart';
 
 class Login_Doctor extends StatefulWidget {
   const Login_Doctor({Key? key}) : super(key: key);
@@ -20,8 +19,7 @@ class _Login_DoctorState extends State<Login_Doctor> {
               leading: IconButton(
                 icon: Icon(Icons.arrow_back, color: Colors.white),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const WelcomeScreen()));
+                  Navigator.of(context).pop();
                 },
               ),
               title: Text('Login as Doctor'),
