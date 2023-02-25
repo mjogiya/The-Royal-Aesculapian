@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:theroyalaesculapian/pages/Patient/Skincare.dart';
 
-class Medicine extends StatefulWidget {
-  const Medicine({Key? key}) : super(key: key);
+class Medi extends StatefulWidget {
+  const Medi({super.key});
 
   @override
-  State<Medicine> createState() => _MedicineState();
+  State<Medi> createState() => _MediState();
 }
 
-class _MedicineState extends State<Medicine> {
+class _MediState extends State<Medi> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,12 +24,11 @@ class _MedicineState extends State<Medicine> {
             child: GridView(
               children: [
                 makeCategory(
-                  catImage: 'Logos/Medicines/Covid.jpeg',
-                  tag: "Covid \n Essentials",
-                  title: "Covid \n Essentials",
-                  context: context,
-                  pageUrl: Skincare(),
-                ),
+                    catImage: 'Logos/Medicines/Covid.jpeg',
+                    tag: "Covid \n Essentials",
+                    title: "Covid \n Essentials",
+                    context: context,
+                    pageUrl: Skincare()),
                 makeCategory(
                     catImage: 'Logos/Medicines/Skincare.jpeg',
                     tag: "Skin Care",
