@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theroyalaesculapian/Connection/auth.dart';
 import 'Patient/Dashboard.dart';
 
 class login extends StatefulWidget {
@@ -9,6 +10,11 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
+  // final AuthService _auth = AuthService();
+
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,6 +47,11 @@ class _loginState extends State<login> {
               Container(
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                 child: TextField(
+                  onChanged: (val) {
+                    setState(() {
+                      email = val;
+                    });
+                  },
                   style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
@@ -59,6 +70,11 @@ class _loginState extends State<login> {
               Container(
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                 child: TextField(
+                  onChanged: (val) {
+                    setState(() {
+                      password = val;
+                    });
+                  },
                   style: TextStyle(color: Colors.white),
                   obscureText: true,
                   decoration: InputDecoration(
@@ -84,13 +100,15 @@ class _loginState extends State<login> {
                       backgroundColor: Color.fromARGB(255, 34, 93, 42),
                     ),
                     child: const Text('LOG IN'),
-                    onPressed: () {
-                      Navigator.of(context)
-                          .pushReplacement(new MaterialPageRoute(
-                        builder: (BuildContext context) {
-                          return Dashboard();
-                        },
-                      ));
+                    onPressed: () async {
+                      print(email);
+                      print(password);
+                      // Navigator.of(context)
+                      //     .pushReplacement(new MaterialPageRoute(
+                      //   builder: (BuildContext context) {
+                      //     return Dashboard();
+                      //   },
+                      // ));
                     },
                   )),
               TextButton(
