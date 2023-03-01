@@ -1,14 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:theroyalaesculapian/pages/Splashscreen.dart';
-import 'package:theroyalaesculapian/pages/login.dart';
-import 'package:theroyalaesculapian/pages/register.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MaterialApp(
 //  initialRoute: First_Screen(),
     routes: {
       '/': (context) => Splashscreen(),
       //    '/register': (context) => register(),
     },
+
   ));
 }

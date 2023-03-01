@@ -9,7 +9,8 @@ class register extends StatefulWidget {
 }
 
 class _registerState extends State<register> {
-  // final AuthService _auth = AuthService();
+
+  final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
 
@@ -164,7 +165,12 @@ class _registerState extends State<register> {
                           child: const Text('Register'),
                           onPressed: () async {
                             if(_formKey.currentState!.validate()){
-                              print(email);
+                              dynamic result = await _auth.registerWithEmail(email, password);
+                              if(result == null) {
+                                print("somethig wrong");
+                              } else {
+                                print(result);
+                              }
                             }
                           },
                         )),
