@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'WelcomeScreen.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -11,11 +10,12 @@ class Splashscreen extends StatefulWidget {
 
 class _SplashscreenState extends State<Splashscreen> {
 
-  void initState() {
+  void initState()  {
     // TODO: implement initState
     super.initState();
     const delay = const Duration(seconds: 3);
     Future.delayed(delay, () => GoToWelcome());
+    // await Firebase.initializeApp();
   }
   @override
   Widget build(BuildContext context) {
@@ -30,10 +30,6 @@ class _SplashscreenState extends State<Splashscreen> {
           )
           ),
         ),
-
-
-
-
     );
   }
   void GoToWelcome(){
