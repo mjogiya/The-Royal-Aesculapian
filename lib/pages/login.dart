@@ -101,14 +101,14 @@ class _loginState extends State<login> {
                     ),
                     child: const Text('LOG IN'),
                     onPressed: () async {
-                      print(email);
-                      print(password);
-                      // Navigator.of(context)
-                      //     .pushReplacement(new MaterialPageRoute(
-                      //   builder: (BuildContext context) {
-                      //     return Dashboard();
-                      //   },
-                      // ));
+                      // print(email);
+                      // print(password);
+                      Navigator.of(context)
+                          .pushReplacement(new MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return Dashboard();
+                        },
+                      ));
                     },
                   )),
               TextButton(

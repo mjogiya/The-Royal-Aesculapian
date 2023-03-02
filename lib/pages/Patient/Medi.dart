@@ -106,7 +106,6 @@ Widget makeCategory({catImage, title, tag, context, pageUrl}) {
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Colors.black, fontSize: 20),
                 ),
-
               ],
             ),
           ),
