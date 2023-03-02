@@ -68,9 +68,7 @@ class _SkincareState extends State<Skincare> {
             itemCount: imgList.length,
             itemBuilder: (context, index) {
               return GestureDetector(
-                onTap: () {
-                  
-                },
+                onTap: () {},
                 child: Card(
                   margin: EdgeInsets.only(
                     top: 10,
@@ -100,7 +98,7 @@ class _SkincareState extends State<Skincare> {
                               height: 5,
                             ),
                             Container(
-                              width: 290,
+                              width: 270,
                               child: Text(
                                 descList[index],
                                 style:
@@ -110,24 +108,29 @@ class _SkincareState extends State<Skincare> {
                             SizedBox(
                               height: 15,
                             ),
-                            Container(
-                              width: 100,
-                              child: Text(
-                                price[index],
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            Container(
-                              child: OutlinedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "Add to Cart",
-                                  style: TextStyle(color: Colors.black),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Container(
+                                  width: 100,
+                                  child: Text(
+                                    price[index],
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
-                              ),
+                                Container(
+                                  child: OutlinedButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      "Add to Cart",
+                                      style: TextStyle(color: Colors.black),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),

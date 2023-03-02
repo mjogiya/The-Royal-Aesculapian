@@ -61,7 +61,7 @@ class _SelectdoctorState extends State<Selectdoctor> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Container(
-                        width: 100,
+                        width: 91,
                         height: 150,
                         child: Image.asset(imgList[index]),
                       ),
@@ -81,7 +81,7 @@ class _SelectdoctorState extends State<Selectdoctor> {
                               height: 5,
                             ),
                             Container(
-                              width: 280,
+                              width: 270,
                               child: Text(
                                 descList[index],
                                 style:
@@ -152,7 +152,7 @@ class _SelectdoctorState extends State<Selectdoctor> {
                                     ),
                                   ),
                                 ),
-                                MaterialButton( 
+                                MaterialButton(
                                   minWidth: 160,
                                   color: Color.fromARGB(255, 229, 233, 241),
                                   onPressed: () {},
