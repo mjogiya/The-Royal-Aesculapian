@@ -1,24 +1,37 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:theroyalaesculapian/Connection/Database.dart';
 
-class AuthService {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+class AuthService  {
+   FirebaseAuth _auth = FirebaseAuth.instance;
 
 
-  //sign in anon
 
-  //sign in with email
-  // Future signInEmail() async {
-  //   try{
-  //   }catch(e) {
-  //
-  //   }
+  //Strem set up
+  // Stream<User> get user {
+  //   return _auth.userChanges().map(_userFromFirebaseUser());
   // }
+// sign in with email and password
+
+  Future SigninWithEmail(String email, String password) async {
+    try{
+      UserCredential result =  await _auth.signInWithEmailAndPassword(email: email, password: password);
+      User? user = result.user;
+      return user;
+    }catch(e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
+
 
   //register with email
-Future registerWithEmail(String email, String password) async {
+Future registerWithEmail(String name, String email, String mobile, String password) async {
     try{
      UserCredential result =  await _auth.createUserWithEmailAndPassword(email: email, password: password );
       User? user = result.user;
+      // adding data to firestore
+     await DatabaseService(uid: user!.uid).RegisterUserData(name, email, mobile, password);
       return user;
     }catch(e) {
       print(e.toString());
@@ -27,4 +40,13 @@ Future registerWithEmail(String email, String password) async {
 }
 
   //sign out
+  Future signOutEmail() async {
+    try{
+      return await _auth.signOut();
+    } catch(e) {
+      print(e.toString());
+      return null;
+    }
+  }
+
 }

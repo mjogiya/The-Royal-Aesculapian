@@ -165,22 +165,15 @@ class _registerState extends State<register> {
                           child: const Text('Register'),
                           onPressed: () async {
                             if(_formKey.currentState!.validate()){
-                              dynamic result = await _auth.registerWithEmail(email, password);
+                              dynamic result = await _auth.registerWithEmail(name, email, mobile, password);
                               if(result == null) {
-                                print("somethig wrong");
+                                print("something wrong");
                               } else {
                                 print(result);
                               }
                             }
                           },
                         )),
-                    TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        'Forgot Password?',
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-                    ),
                   ],
                 ),),
               ),
