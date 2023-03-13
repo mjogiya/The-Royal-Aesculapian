@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:theroyalaesculapian/Connection/auth.dart';
 import 'package:theroyalaesculapian/pages/Patient/Account/Editprofile.dart';
+import 'package:theroyalaesculapian/pages/Splashscreen.dart';
 
 class Account extends StatefulWidget {
   const Account({Key? key}) : super(key: key);
@@ -9,6 +11,8 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
+  final AuthService _auth = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -146,7 +150,11 @@ class _AccountState extends State<Account> {
                 ),
               ),
               ListTile(
+                onTap: () async {
+                  await _auth.signOutEmail();
+                },
                 leading: Container(
+
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(

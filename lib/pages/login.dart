@@ -10,10 +10,13 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  // final AuthService _auth = AuthService();
+
+  final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
 
   String email = '';
   String password = '';
+  String error = '';
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,10 @@ class _loginState extends State<login> {
       ),
       body: Center(
         child: SingleChildScrollView(
-          child: Column(
+          child: Form(
+            key: _formKey,
+          child:
+          Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -46,7 +52,8 @@ class _loginState extends State<login> {
               ),
               Container(
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-                child: TextField(
+                child: TextFormField(
+                  validator: (val) => val!.isEmpty ? 'Enter Your email' : null,
                   onChanged: (val) {
                     setState(() {
                       email = val;
@@ -69,7 +76,8 @@ class _loginState extends State<login> {
               ),
               Container(
                 padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-                child: TextField(
+                child: TextFormField(
+                  validator: (val) => val!.isEmpty ? 'Enter Your Password' : null,
                   onChanged: (val) {
                     setState(() {
                       password = val;
@@ -101,14 +109,21 @@ class _loginState extends State<login> {
                     ),
                     child: const Text('LOG IN'),
                     onPressed: () async {
-                      // print(email);
-                      // print(password);
-                      Navigator.of(context)
-                          .pushReplacement(new MaterialPageRoute(
-                        builder: (BuildContext context) {
-                          return Dashboard();
-                        },
-                      ));
+                      print(email);
+                      print(password);
+                      if(_formKey.currentState!.validate()){
+                        dynamic result = await _auth.SigninWithEmail(email, password);
+                        if(result == null) {
+                          print("something wrong");
+                        } else {
+                          Navigator.of(context)
+                              .pushReplacement(new MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return Dashboard();
+                            },
+                          ));
+                        }
+                      }
                     },
                   )),
               TextButton(
@@ -121,6 +136,7 @@ class _loginState extends State<login> {
             ],
           ),
         ),
+      ),
       ),
     ));
   }

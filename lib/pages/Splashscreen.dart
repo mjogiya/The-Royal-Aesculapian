@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:theroyalaesculapian/pages/Patient/Dashboard.dart';
+import 'Patient/Home.dart';
 import 'WelcomeScreen.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -35,7 +38,14 @@ class _SplashscreenState extends State<Splashscreen> {
   void GoToWelcome(){
     Navigator.of(context).pushReplacement(new MaterialPageRoute(
       builder: (BuildContext context) {
-        return WelcomeScreen();
+        return StreamBuilder(stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if(snapshot.hasData) {
+              return Dashboard();
+            } else {
+              return WelcomeScreen();
+            }
+          },);
       },
     ));
   }
