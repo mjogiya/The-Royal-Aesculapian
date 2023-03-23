@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/Doctor/DocDashboard.dart';
 
 class Login_Doctor extends StatefulWidget {
   const Login_Doctor({Key? key}) : super(key: key);
@@ -75,23 +74,7 @@ class _Login_DoctorState extends State<Login_Doctor> {
                                 color: Colors.white, letterSpacing: 3.0)),
                       ),
                     ),
-                    Container(
-                        height: 80,
-                        padding: const EdgeInsets.all(20),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size.fromHeight(50),
-                            backgroundColor: Color.fromARGB(255, 34, 93, 42),
-                          ),
-                          child: const Text('LOG IN'),
-                          onPressed: () {
-                            Navigator.of(context).push(new MaterialPageRoute(
-                              builder: (BuildContext context) {
-                                return DocDashboard();
-                              },
-                            ));
-                          },
-                        )),
+
                     TextButton(
                       onPressed: () {},
                       child: Text(
