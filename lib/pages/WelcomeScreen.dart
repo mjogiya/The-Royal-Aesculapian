@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/Login_Doc.dart';
 import 'package:theroyalaesculapian/pages/login.dart';
 import 'package:theroyalaesculapian/pages/register.dart';
 
@@ -70,37 +69,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: const Text("Register as Patient"),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Container(
-                width: 300,
-                height: 5,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(5),
-                ),
-              ),
-            ),
-            Container(
-              width: 300,
-              margin: const EdgeInsets.fromLTRB(0, 30, 0, 20),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return Login_Doctor();
-                    },
-                  ));
-                },
-                style: TextButton.styleFrom(
-                    shape: const StadiumBorder(),
-                    foregroundColor: Colors.white,
-                    backgroundColor: Color.fromRGBO(34, 93, 42, 100),
-                    padding: const EdgeInsets.all(20),
-                    textStyle: const TextStyle(fontSize: 30)),
-                child: const Text("Login as Doctor"),
-              ),
-            ),
+
+
           ],
         ));
   }

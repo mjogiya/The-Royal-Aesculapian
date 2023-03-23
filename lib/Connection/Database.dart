@@ -15,6 +15,10 @@ class DatabaseService {
 
     });
   }
+//Setting up the stream
 
+Stream<QuerySnapshot> get User {
+    return Users.snapshots();
+}
 
 }
