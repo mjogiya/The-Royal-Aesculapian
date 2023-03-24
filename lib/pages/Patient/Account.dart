@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:theroyalaesculapian/Connection/auth.dart';
+import 'package:theroyalaesculapian/pages/Patient/Account/Appointments.dart';
 import 'package:theroyalaesculapian/pages/Patient/Account/Editprofile.dart';
-import 'package:theroyalaesculapian/pages/Splashscreen.dart';
 
 class Account extends StatefulWidget {
   const Account({Key? key}) : super(key: key);
@@ -55,6 +55,13 @@ class _AccountState extends State<Account> {
               const Divider(),
               SizedBox(height: 20),
               ListTile(
+                onTap: () {
+                  Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return Appointments();
+                    },
+                  ));
+                },
                 leading: Container(
                   width: 40,
                   height: 40,
@@ -154,7 +161,6 @@ class _AccountState extends State<Account> {
                   await _auth.signOutEmail();
                 },
                 leading: Container(
-
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
