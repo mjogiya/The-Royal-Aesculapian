@@ -116,8 +116,7 @@ class _loginState extends State<login> {
                         if(result == null) {
                           print("something wrong");
                         } else {
-                          Navigator.of(context)
-                              .pushReplacement(new MaterialPageRoute(
+                          Navigator.of(context).pushReplacement(new MaterialPageRoute(
                             builder: (BuildContext context) {
                               return Dashboard();
                             },
