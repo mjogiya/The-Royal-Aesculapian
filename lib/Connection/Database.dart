@@ -8,6 +8,7 @@ class DatabaseService {
   final CollectionReference Users =
       FirebaseFirestore.instance.collection('Users');
   FirebaseFirestore db = FirebaseFirestore.instance;
+
   final CollectionReference Doctors =
       FirebaseFirestore.instance.collection('Doctor');
 
