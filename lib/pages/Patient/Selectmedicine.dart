@@ -1,22 +1,22 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/Connection/Database.dart';
 import 'package:provider/provider.dart';
-import 'package:theroyalaesculapian/pages/Widgets/DoctorList.dart';
+import 'package:theroyalaesculapian/Connection/Database.dart';
+import 'package:theroyalaesculapian/pages/Widgets/MedicinesList.dart';
 
-class Selectdoctor extends StatefulWidget {
-  const Selectdoctor({super.key});
+class Selectmedicine extends StatefulWidget {
+  const Selectmedicine({super.key});
 
   @override
-  State<Selectdoctor> createState() => _SelectdoctorState();
+  State<Selectmedicine> createState() => _SelectmedicineState();
 }
 
-class _SelectdoctorState extends State<Selectdoctor> {
+class _SelectmedicineState extends State<Selectmedicine> {
   @override
   Widget build(BuildContext context) {
+
     var streamProvider = StreamProvider<QuerySnapshot?>.value(
-      value: DatabaseService(uid: '').Doctor,
+      value: DatabaseService(uid: '').Medicine,
       initialData: null,
       child: MaterialApp(
         home: Scaffold(
@@ -29,13 +29,13 @@ class _SelectdoctorState extends State<Selectdoctor> {
               },
             ),
             title: Text(
-              "Select Doctor",
+              "Select Medicines",
               style: TextStyle(
                 color: Colors.white,
               ),
             ),
           ),
-          body: DoctorList(),
+          body: MedicineList(),
         ),
       ),
     );

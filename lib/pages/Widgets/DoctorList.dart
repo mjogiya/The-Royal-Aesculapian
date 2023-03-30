@@ -7,20 +7,27 @@ class DoctorList extends StatefulWidget {
 
   @override
   State<DoctorList> createState() => _DoctorListState();
+
 }
+final CollectionReference firebase = FirebaseFirestore.instance.collection("Doctor");
+var Doctors = FirebaseFirestore.instance;
 
 class _DoctorListState extends State<DoctorList> {
   @override
   Widget build(BuildContext context) {
-    final doctors = Provider.of<QuerySnapshot>(context);
-    for (var doc in doctors.docs) {
-      print(doc.data());
-    }
+    var firebase = Doctors
+        .collection('Doctor')
+        .snapshots();
+    // final doctors = Provider.of<QuerySnapshot>(context);
 
-     // for (var doc in doctors.docs) {
-      return ListView.builder(
-          itemCount: doctors.size,
-          itemBuilder: (context, index) {
+      return Scaffold(
+        body: StreamBuilder<QuerySnapshot> (
+          stream: firebase,
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) => ListView.builder(
+          itemCount: snapshot.data!.docs.length,
+          itemBuilder: (BuildContext context, index) {
+            final DocumentSnapshot doc = snapshot.data!.docs[index];
+
             return GestureDetector(
               onTap: () {},
               child: Card(
@@ -34,7 +41,7 @@ class _DoctorListState extends State<DoctorList> {
                     Container(
                       width: 91,
                       height: 150,
-                      child: Image.asset(''),
+                      child: Image.asset(doc['docImage']),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(15),
@@ -43,7 +50,7 @@ class _DoctorListState extends State<DoctorList> {
                         children: <Widget>[
                           Text(
 
-                            '',
+                            doc['name'],
                             style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.black,
@@ -52,27 +59,38 @@ class _DoctorListState extends State<DoctorList> {
                           SizedBox(
                             height: 5,
                           ),
-                          // Container(
-                          //   width: 270,
-                          //   child: Text(
-                          //     descList[index],
-                          //     style: TextStyle(
-                          //         fontSize: 15, color: Colors.grey),
-                          //   ),
-                          // ),
+                          Container(
+                            width: 270,
+                            child: Text(
+                              ('Speciality: ' + doc['Services']),
+                              style: TextStyle(
+                                  fontSize: 15, color: Colors.grey),
+                            ),
+                          ),
                           SizedBox(
                             height: 5,
                           ),
-                          // Container(
-                          //   width: 200,
-                          //   child: Text(
-                          //     exp[index],
-                          //     style: TextStyle(
-                          //       fontSize: 15,
-                          //       color: Colors.grey,
-                          //     ),
-                          //   ),
-                          // ),
+                          Container(
+                            width: 270,
+                            child: Text(
+                              (doc['experience'] + ' years experience overall'),
+                              style: TextStyle(
+                                  fontSize: 15, color: Colors.grey),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            width: 200,
+                            child: Text(
+                              ('Fees: '+doc['fees']),
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
                           SizedBox(
                             height: 20,
                           ),
@@ -84,7 +102,7 @@ class _DoctorListState extends State<DoctorList> {
                                 color: Colors.green,
                               ),
                               Text(
-                                '95%',
+                                doc['ratings'],
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 15,
@@ -100,7 +118,7 @@ class _DoctorListState extends State<DoctorList> {
                                 color: Colors.green,
                               ),
                               Text(
-                                '30 Patient Stories',
+                                (doc['patients stories']+' Patient Stories'),
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 15,
@@ -146,7 +164,8 @@ class _DoctorListState extends State<DoctorList> {
               ),
             );
           })
-      ;
+      )
+        );
     }
   }
 

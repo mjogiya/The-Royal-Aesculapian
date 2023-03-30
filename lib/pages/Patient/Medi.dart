@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theroyalaesculapian/pages/Patient/Skincare.dart';
+import 'package:theroyalaesculapian/pages/Patient/Selectmedicine.dart';
 
 class Medi extends StatefulWidget {
   const Medi({super.key});
@@ -28,42 +28,42 @@ class _MediState extends State<Medi> {
                   tag: "Covid \n Essentials",
                   title: "Covid \n Essentials",
                   context: context,
-                  pageUrl: Skincare(),
+                  pageUrl: Selectmedicine(),
                 ),
                 makeCategory(
                   catImage: 'Logos/Medicines/Skincare.jpeg',
                   tag: "Skin Care",
                   title: "Skin Care",
                   context: context,
-                  pageUrl: Skincare(),
+                  pageUrl: Selectmedicine(),
                 ),
                 makeCategory(
                   catImage: 'Logos/Medicines/Vitamin.jpeg',
                   tag: "Vitamin and \n Minarals",
                   title: "Vitamin and \n Minarals",
                   context: context,
-                  pageUrl: Skincare(),
+                  pageUrl: Selectmedicine(),
                 ),
                 makeCategory(
                   catImage: 'Logos/Medicines/HealthyFood.jpeg',
                   tag: "Health Food \n and Drinks",
                   title: "Health Food and Drinks",
                   context: context,
-                  pageUrl: Skincare(),
+                  pageUrl: Selectmedicine(),
                 ),
                 makeCategory(
                   catImage: 'Logos/Medicines/PainRelif.jpeg',
                   tag: "Pain Relief",
                   title: "Pain Relief",
                   context: context,
-                  pageUrl: Skincare(),
+                  pageUrl: Selectmedicine(),
                 ),
                 makeCategory(
                   catImage: 'Logos/Medicines/Protein.jpeg',
                   tag: "Protein and \n Supplements",
                   title: "Protein and Supplements",
                   context: context,
-                  pageUrl: Skincare(),
+                  pageUrl: Selectmedicine(),
                 ),
               ],
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

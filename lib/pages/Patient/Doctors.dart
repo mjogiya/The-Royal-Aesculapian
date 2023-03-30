@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:theroyalaesculapian/pages/Patient/Selectdoctor.dart';
-import 'package:theroyalaesculapian/pages/Patient/Skincare.dart';
+import 'package:theroyalaesculapian/pages/Patient/Selectmedicine.dart';
 
 class Doctors extends StatefulWidget {
   const Doctors({Key? key}) : super(key: key);
