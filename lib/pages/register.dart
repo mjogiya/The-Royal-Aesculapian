@@ -22,6 +22,7 @@ class _registerState extends State<register> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+          debugShowCheckedModeBanner: false,
         home: Scaffold(
             backgroundColor: Color.fromARGB(255, 3, 55, 57),
             appBar: AppBar(

@@ -16,6 +16,8 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+          debugShowCheckedModeBanner: false,
+
       home: Scaffold(
         appBar: AppBar(
           title: Text("Account"),

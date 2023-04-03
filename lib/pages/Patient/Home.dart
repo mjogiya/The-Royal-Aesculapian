@@ -13,6 +13,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+          debugShowCheckedModeBanner: false,
+
       home: Scaffold(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: Container(

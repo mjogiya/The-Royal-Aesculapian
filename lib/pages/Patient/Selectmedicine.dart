@@ -19,6 +19,8 @@ class _SelectmedicineState extends State<Selectmedicine> {
       value: DatabaseService(uid: '').Medicine,
       initialData: null,
       child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+
         home: Scaffold(
           appBar: AppBar(
             backgroundColor: Color.fromARGB(255, 3, 55, 57),

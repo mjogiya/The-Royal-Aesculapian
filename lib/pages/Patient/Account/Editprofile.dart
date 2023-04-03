@@ -15,6 +15,7 @@ class _EditprofileState extends State<Editprofile> with TickerProviderStateMixin
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          
           backgroundColor: Color.fromARGB(255, 3, 55, 57),
           title: const Text('Edit Profile'),
           bottom: const TabBar(

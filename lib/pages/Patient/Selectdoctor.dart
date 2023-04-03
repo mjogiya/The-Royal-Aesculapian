@@ -19,6 +19,8 @@ class _SelectdoctorState extends State<Selectdoctor> {
       value: DatabaseService(uid: '').Doctor,
       initialData: null,
       child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+
         home: Scaffold(
           appBar: AppBar(
             backgroundColor: Color.fromARGB(255, 3, 55, 57),

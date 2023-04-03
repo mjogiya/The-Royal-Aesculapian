@@ -11,6 +11,6 @@ void main() async {
       '/': (context) => Splashscreen(),
       //    '/register': (context) => register(),
     },
-
+    debugShowCheckedModeBanner: false,
   ));
 }

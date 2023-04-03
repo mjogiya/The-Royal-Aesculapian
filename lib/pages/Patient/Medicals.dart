@@ -13,6 +13,8 @@ class _MedicalsState extends State<Medicals> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+          debugShowCheckedModeBanner: false,
+
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 3, 55, 57),
