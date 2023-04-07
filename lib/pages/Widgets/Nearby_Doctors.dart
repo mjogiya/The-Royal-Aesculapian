@@ -1,6 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/widgets.dart';
 
 class NearbyDoctors extends StatefulWidget {
@@ -9,6 +10,11 @@ class NearbyDoctors extends StatefulWidget {
   @override
   State<NearbyDoctors> createState() => _NearbyDoctorsState();
 }
+
+final CollectionReference firebase = FirebaseFirestore.instance.collection("Doctor");
+var Doctors = FirebaseFirestore.instance;
+FirebaseFirestore db = FirebaseFirestore.instance;
+final currentPat = FirebaseAuth.instance.currentUser;
 
 class _NearbyDoctorsState extends State<NearbyDoctors> {
   @override

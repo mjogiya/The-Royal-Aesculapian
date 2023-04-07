@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:theroyalaesculapian/pages/Widgets/Loading.dart';
 
 class MedicineList extends StatefulWidget {
   const MedicineList({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class _MedicineListState extends State<MedicineList> {
       body: StreamBuilder<QuerySnapshot>(
           stream: firebase,
           builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) =>
+          snapshot.hasData ?
           ListView.builder(
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (BuildContext context, index) {
@@ -100,7 +102,7 @@ class _MedicineListState extends State<MedicineList> {
                 ),
               );
             }
-          )
+          ) : Loading(),
       )
     );
   }

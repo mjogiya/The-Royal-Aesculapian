@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:theroyalaesculapian/pages/Widgets/Loading.dart';
 
 class DoctorList extends StatefulWidget {
   const DoctorList({Key? key, required this.type}) : super(key: key);
@@ -29,7 +30,7 @@ class _DoctorListState extends State<DoctorList> {
       return Scaffold(
         body: StreamBuilder<QuerySnapshot> (
           stream: firebase,
-        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) => ListView.builder(
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) => snapshot.hasData ? ListView.builder(
           itemCount: snapshot.data!.docs.length,
           itemBuilder: (BuildContext context, index) {
             final DocumentSnapshot doc = snapshot.data!.docs[index];
@@ -181,7 +182,7 @@ class _DoctorListState extends State<DoctorList> {
                 ),
               ),
             );
-          })
+          }) : Loading(),
       )
         );
     }

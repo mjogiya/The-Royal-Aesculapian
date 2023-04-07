@@ -1,37 +1,35 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:theroyalaesculapian/pages/Widgets/Loading.dart';
 
-class AppointmentList extends StatefulWidget {
-  const AppointmentList({Key? key}) : super(key: key);
+class MedicalList extends StatefulWidget {
+  const MedicalList({Key? key}) : super(key: key);
 
   @override
-  State<AppointmentList> createState() => _AppointmentListState();
+  State<MedicalList> createState() => _MedicalListState();
 }
-final CollectionReference firebase = FirebaseFirestore.instance.collection("Appointment");
-var Appointment = FirebaseFirestore.instance;
-FirebaseFirestore db = FirebaseFirestore.instance;
-final currentPat = FirebaseAuth.instance.currentUser;
+var Medicals = FirebaseFirestore.instance;
 
-class _AppointmentListState extends State<AppointmentList> {
+class _MedicalListState extends State<MedicalList> {
+  bool isLoading = true;
   @override
   Widget build(BuildContext context) {
-    var firebase = Appointment
-        .collection('Appointment')
-        .where('Patient', isEqualTo: '${currentPat!.uid}')
+    var firebase = Medicals
+        .collection('Medical')
         .snapshots();
 
     return Scaffold(
-
-      body: StreamBuilder<QuerySnapshot>(
+      body: StreamBuilder<QuerySnapshot> (
         stream: firebase,
-        builder: (BuildContext context,AsyncSnapshot<QuerySnapshot> snapshot)
-        {
-          return snapshot.hasData ? ListView.builder(
-              itemCount: snapshot.data!.docs.length,
-              itemBuilder: (BuildContext context, index) {
-                final DocumentSnapshot doc = snapshot.data!.docs[index];
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) =>
+        snapshot.hasData ?
+        ListView.builder(
+          itemCount: snapshot.data!.docs.length,
+          itemBuilder: (BuildContext context, int index) {
+
+            final DocumentSnapshot doc = snapshot.data!.docs[index];
 
             return Container(
               margin: EdgeInsets.symmetric(vertical: 8),
@@ -46,7 +44,7 @@ class _AppointmentListState extends State<AppointmentList> {
                       child: Container(
                         height: 120,
                         child: Image.network(
-                          doc['DocImage'],
+                          doc['photoUrl'],
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -59,33 +57,32 @@ class _AppointmentListState extends State<AppointmentList> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              doc['DocName'],
-                              style:
-                              TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                              doc['name'],
+                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                             SizedBox(height: 8),
                             Text(
-                              doc['DocAddress'],
+                              doc['street'],
                               style: TextStyle(fontSize: 14),
                             ),
                             SizedBox(height: 8),
                             Text(
-                              doc['DocMobile'],
+                              doc['contact'],
                               style: TextStyle(fontSize: 14),
                             ),
                             SizedBox(height: 8),
                             Row(
                               children: [
                                 Icon(
-                                  doc['Available'] ? Icons.check_circle : Icons.cancel,
-                                  color: doc['Available'] ? Colors.green : Colors.red,
+                                  doc['status'] ? Icons.check_circle : Icons.cancel,
+                                  color: doc['status'] ? Colors.green : Colors.red,
                                 ),
                                 SizedBox(width: 4),
                                 Text(
-                                  doc['Available'] ? 'Open Now' : 'Closed Now',
+                                  doc['status'] ? 'Open Now' : 'Closed Now',
                                   style: TextStyle(
                                     fontSize: 14,
-                                    color: doc['Available'] ? Colors.green : Colors.red,
+                                    color: doc['status'] ? Colors.green : Colors.red,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -99,9 +96,19 @@ class _AppointmentListState extends State<AppointmentList> {
                 ),
               ),
             );
-          }) : Loading();
-        }
+
+          },
+        ) : Loading()
       ),
     );
+
+  }
+
+  @override
+  void initState() {
+    setState(() {
+      sleep(Duration(microseconds: 100));
+      isLoading = false;
+    });
   }
 }

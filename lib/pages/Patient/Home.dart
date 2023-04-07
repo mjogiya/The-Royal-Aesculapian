@@ -3,7 +3,6 @@ import 'package:theroyalaesculapian/pages/Patient/Search/Category.dart';
 import 'package:theroyalaesculapian/pages/Widgets/Nearby_Doctors.dart';
 import 'package:theroyalaesculapian/pages/Widgets/health_need.dart';
 import 'package:theroyalaesculapian/pages/Widgets/upcoming_card.dart';
-//import 'package:theroyalaesculapian/pages/Widgets/Home_Card.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -18,67 +17,75 @@ class _HomeState extends State<Home> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
-          /*body: Container(
-            child: Padding(
-              padding: const EdgeInsets.all(5),
-              child: Column(
+            backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          body:
+
+              ListView(
+                padding: const EdgeInsets.all(14),
                 children: [
-                  SizedBox(height: 50),
                   Container(
-                    width: 400,
-                    height: 45,
-                    child: ElevatedButton.icon(
-                      icon: Icon(
-                        Icons.search,
-                        color: Colors.grey,
-                        size: 30.0,
-                      ),
-                      label: Text(
-                        'Search Here',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).push(new MaterialPageRoute(
-                          builder: (BuildContext context) {
-                            return Category();
-                          },
-                        ));
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.grey[300],
-                        shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(20.0),
-                        ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 30),
+
+                          Container(
+                            width: 400,
+                            height: 45,
+                            child: ElevatedButton.icon(
+                              icon: Icon(
+                                Icons.search,
+                                color: Colors.grey,
+                                size: 30.0,
+                              ),
+                              label: Text(
+                                'Search Here',
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              onPressed: () {
+                                Navigator.of(context).push(new MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                    return Category();
+                                  },
+                                ));
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.grey[300],
+                                shape: new RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(20.0),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 50),
+                        ],
                       ),
                     ),
                   ),
+
+
+
+                   UpcomingCard(),
+                   SizedBox(height: 20),
+                  Text(
+                    "Health Needs",
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                   SizedBox(height: 15),
+                  //Health Need
+                   HealthNeeds(),
+                   SizedBox(height: 30),
+                  Text(
+                    "Featured Doctors",
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                   SizedBox(height: 15),
+                  //Nearby Doctors
+                  NearbyDoctors(),
                 ],
               ),
-            ),
-          ),*/
-          body: ListView(
-            padding: const EdgeInsets.all(14),
-            children: [
-              const UpcomingCard(),
-              const SizedBox(height: 20),
-              Text(
-                "Health Needs",
-                style: Theme.of(context).textTheme.headline6,
-              ),
-              const SizedBox(height: 15),
-              //Health Need
-              const HealthNeeds(),
-              const SizedBox(height: 30),
-              Text(
-                "Nearby Doctors",
-                style: Theme.of(context).textTheme.headline6,
-              ),
-              const SizedBox(height: 15),
-              //Nearby Doctors
-              NearbyDoctors(),
-            ],
-          ),
+
         ));
   }
 }
