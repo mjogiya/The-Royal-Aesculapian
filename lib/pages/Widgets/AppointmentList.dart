@@ -21,8 +21,6 @@ class _AppointmentListState extends State<AppointmentList> {
         .where('Patient', isEqualTo: '${currentPat!.uid}')
         .snapshots();
 
-
-
     return Scaffold(
 
       body: StreamBuilder<QuerySnapshot>(

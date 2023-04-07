@@ -6,13 +6,6 @@ class AuthService  {
    FirebaseAuth _auth = FirebaseAuth.instance;
    // ignore: non_constant_identifier_names
 
-
-  //Strem set up
-  // Stream<User> get user {
-  //   return _auth.userChanges().map(_userFromFirebaseUser());
-  // }
-// sign in with email and password
-
   Future SigninWithEmail(String email, String password) async {
     try{
       UserCredential? result =  await _auth.signInWithEmailAndPassword(email: email, password: password);
@@ -39,7 +32,7 @@ class AuthService  {
   //register with email
 Future registerWithEmail(String name, String email, String mobile, String password) async {
     try{
-     UserCredential result =  await _auth.createUserWithEmailAndPassword(email: email, password: password );
+     UserCredential result =  await _auth.createUserWithEmailAndPassword(email: email, password: password);
       User? user = result.user;
       // adding data to firestore
      await DatabaseService(uid: user!.uid).RegisterUserData(name, email, mobile, password, 'Patient');

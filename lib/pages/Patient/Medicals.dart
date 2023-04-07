@@ -26,7 +26,7 @@ class _MedicalsState extends State<Medicals> {
           name: 'ABC Pharmacy',
           address: '123 Main St, Anytown, USA',
           phone: '(123) 456-7890',
-          imageUrl: 'https://images.unsplash.com/photo-1576091167186-537', isOpen: true),
+          imageUrl: 'https://omsi.in/wp-content/uploads/2018/04/Online-Medical-Store-visakhapatnam.jpg', isOpen: true),
           ],
         ),
       ),

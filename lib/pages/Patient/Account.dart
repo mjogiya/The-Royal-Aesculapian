@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:theroyalaesculapian/Connection/auth.dart';
 import 'package:theroyalaesculapian/pages/Patient/Account/Appointments.dart';
@@ -9,6 +10,8 @@ class Account extends StatefulWidget {
   @override
   State<Account> createState() => _AccountState();
 }
+final currentPat = FirebaseAuth.instance.currentUser;
+
 
 class _AccountState extends State<Account> {
   final AuthService _auth = AuthService();
@@ -39,8 +42,10 @@ class _AccountState extends State<Account> {
                 ),
               ),
               SizedBox(height: 10),
-              Text('Mayur Jogiya (Patient)'),
+              Text('${currentPat!.email!.toUpperCase()}'),
               SizedBox(height: 20),
+
+
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(new MaterialPageRoute(
