@@ -88,6 +88,11 @@ flutter:
     - Logos/Doctor/ayurveda.jpg
     - Logos/Doctor/physiotherapy.jpg
     - Logos/Doctor/Cancer.jpg
+    - Logos/Appointment.png
+    - Logos/Hospital.png
+    - Logos/Covid.png
+    - Logos/More.png
+    - Logos/Doc.jpg
 
 
         # An image asset can refer to one or more resolution-specific "variants", see
