@@ -4,7 +4,7 @@ import 'package:theroyalaesculapian/Connection/Database.dart';
 
 class AuthService  {
    FirebaseAuth _auth = FirebaseAuth.instance;
-
+   // ignore: non_constant_identifier_names
 
 
   //Strem set up
@@ -20,6 +20,7 @@ class AuthService  {
       // final String role1 = await DatabaseService(uid: user!.uid).getRoleData();
       if(await DatabaseService(uid: user!.uid).getRoleData() == "Patient") {
         return user;
+
       } else {
 
         await _auth.signOut();

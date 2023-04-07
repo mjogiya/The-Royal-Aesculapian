@@ -85,7 +85,7 @@ class _MedicineListState extends State<MedicineList> {
                                   child: OutlinedButton(
                                     onPressed: () {},
                                     child: Text(
-                                      "Add to Cart",
+                                      "Add for Patient",
                                       style: TextStyle(color: Colors.black),
                                     ),
                                   ),

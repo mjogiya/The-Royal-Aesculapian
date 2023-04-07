@@ -6,7 +6,9 @@ import 'package:provider/provider.dart';
 import 'package:theroyalaesculapian/pages/Widgets/DoctorList.dart';
 
 class Selectdoctor extends StatefulWidget {
-  const Selectdoctor({super.key});
+  const Selectdoctor({super.key, required this.title});
+
+  final String title;
 
   @override
   State<Selectdoctor> createState() => _SelectdoctorState();
@@ -31,13 +33,13 @@ class _SelectdoctorState extends State<Selectdoctor> {
               },
             ),
             title: Text(
-              "Select Doctor",
+              '${widget.title}',
               style: TextStyle(
                 color: Colors.white,
               ),
             ),
           ),
-          body: DoctorList(),
+          body: DoctorList(type: '${widget.title}'),
         ),
       ),
     );

@@ -5,7 +5,9 @@ import 'package:theroyalaesculapian/Connection/Database.dart';
 import 'package:theroyalaesculapian/pages/Widgets/MedicinesList.dart';
 
 class Selectmedicine extends StatefulWidget {
-  const Selectmedicine({super.key});
+  const Selectmedicine({super.key, required this.title});
+
+  final String title;
 
   @override
   State<Selectmedicine> createState() => _SelectmedicineState();
@@ -31,7 +33,7 @@ class _SelectmedicineState extends State<Selectmedicine> {
               },
             ),
             title: Text(
-              "Select Medicines",
+              '${widget.title}',
               style: TextStyle(
                 color: Colors.white,
               ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:theroyalaesculapian/pages/Widgets/AppointmentList.dart';
 
-import '../../Widgets/Appointment_Widget.dart';
 
 class Appointments extends StatefulWidget {
   const Appointments({Key? key}) : super(key: key);
@@ -25,24 +25,8 @@ class _AppointmentsState extends State<Appointments>
             },
           ),
         ),
-        body: Column(
-          children: [
-            Appointment_Widget(
-                DocterName: 'Dr. Mayur Jogiya',
-                address: 'LaxmiWadi main road, Rajkot',
-                phone: '1234567890',
-                imageUrl:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFCWb0LrEd6ZUanG-vXlLW7crGHgGRooKtBCDYuZVb0w&s',
-                isAvailable: true),
-            Appointment_Widget(
-                DocterName: 'Dr. Mansi Kakadiya',
-                address: 'Raj Samdhiyana',
-                phone: '1234567890',
-                imageUrl:
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFCWb0LrEd6ZUanG-vXlLW7crGHgGRooKtBCDYuZVb0w&s',
-                isAvailable: true),
-          ],
-        ),
+        body:
+            AppointmentList(),
       ),
     );
   }

@@ -1,24 +1,30 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:provider/provider.dart';
 
 class DoctorList extends StatefulWidget {
-  const DoctorList({Key? key}) : super(key: key);
-
+  const DoctorList({Key? key, required this.type}) : super(key: key);
+  
+  final String type;
   @override
   State<DoctorList> createState() => _DoctorListState();
 
 }
 final CollectionReference firebase = FirebaseFirestore.instance.collection("Doctor");
 var Doctors = FirebaseFirestore.instance;
+FirebaseFirestore db = FirebaseFirestore.instance;
+final currentPat = FirebaseAuth.instance.currentUser;
+
 
 class _DoctorListState extends State<DoctorList> {
+  
   @override
   Widget build(BuildContext context) {
     var firebase = Doctors
         .collection('Doctor')
+        .where('type', isEqualTo: '${widget.type}')
         .snapshots();
-    // final doctors = Provider.of<QuerySnapshot>(context);
+
 
       return Scaffold(
         body: StreamBuilder<QuerySnapshot> (
@@ -41,7 +47,7 @@ class _DoctorListState extends State<DoctorList> {
                     Container(
                       width: 91,
                       height: 150,
-                      child: Image.asset(doc['docImage']),
+                      child: Image.network('${doc['docImage']}'),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(15),
@@ -49,7 +55,6 @@ class _DoctorListState extends State<DoctorList> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-
                             doc['name'],
                             style: TextStyle(
                                 fontSize: 18,
@@ -145,7 +150,20 @@ class _DoctorListState extends State<DoctorList> {
                               MaterialButton(
                                 minWidth: 160,
                                 color: Color.fromARGB(255, 229, 233, 241),
-                                onPressed: () {},
+                                onPressed:  () async {
+                                  final AppointData = {
+                                    "DoctorId" : doc.id,
+                                    "DocName" : doc['name'],
+                                    "DocEmail" : doc['email'],
+                                    "DocMobile" : doc['mobile'],
+                                    "DocAddress": doc['address'],
+                                    "DocImage": doc['docImage'],
+                                    "Available": doc['available'],
+                                    "Bookingtime": Timestamp.now(),
+                                    "Patient" : currentPat!.uid,
+                                  };
+                                 await db.collection("Appointment").doc().set(AppointData).onError((error, stackTrace) => print(error));
+                                },
                                 child: Expanded(
                                   child: Text(
                                     'Book Appointment',

@@ -29,58 +29,81 @@ class _DoctorsState extends State<Doctors> {
             makeCategory(
                 catImage: 'Logos/Doctor/Covid.jpg',
                 title: 'Covid',
-                tag: 'Covid'),
+                tag: 'Covid',
+                pageUrl: Selectdoctor(title: "Covid"),
+            ),
             makeCategory(
                 catImage: 'Logos/Doctor/Skin.jpg',
                 title: 'Skin & Hair',
-                tag: 'skin'),
+                tag: 'skin',
+                pageUrl: Selectdoctor(title: "Skin & Hair"),),
             makeCategory(
                 catImage: 'Logos/Doctor/womensHealth.jpg',
                 title: 'Womens Health',
-                tag: 'women'),
+                tag: 'women',
+                pageUrl: Selectdoctor(title: "Womens Health"),
+      ),
             makeCategory(
                 catImage: 'Logos/Doctor/generalPhysician.jpg',
-                title: 'General physician',
-                tag: 'physician'),
+                title: 'General Physician',
+                tag: 'physician',
+              pageUrl: Selectdoctor(title: "General Physician"),
+            ),
             makeCategory(
                 catImage: 'Logos/Doctor/dentalCare.jpg',
                 title: 'Dental Care',
-                tag: 'dental'),
+                tag: 'dental',
+                pageUrl: Selectdoctor(title: "Dental Care"),
+      ),
             makeCategory(
                 catImage: 'Logos/Doctor/childSpecialist.jpg',
                 title: 'Child Specialist',
-                tag: 'child'),
+                tag: 'child',
+              pageUrl: Selectdoctor(title: "Child Specialist"),
+            ),
             makeCategory(
                 catImage: 'Logos/Doctor/homeopathy.jpg',
                 title: 'Homeopathy',
-                tag: 'homeopathy'),
+                tag: 'homeopathy',
+              pageUrl: Selectdoctor(title: "Homeopathy"),
+            ),
             makeCategory(
                 catImage: 'Logos/Doctor/eyeSpecialist.jpg',
                 title: 'Eye Specialist',
-                tag: 'eye'),
+                tag: 'eye',
+              pageUrl: Selectdoctor(title: "Eye Specialist"),
+            ),
             makeCategory(
                 catImage: 'Logos/Doctor/heart.jpg',
                 title: 'Heart',
-                tag: 'heart'),
+                tag: 'heart',
+              pageUrl: Selectdoctor(title: "Heart Specialist"),
+            ),
             makeCategory(
                 catImage: 'Logos/Doctor/physiotherapy.jpg',
                 title: 'Physiotherapy',
-                tag: 'physiotherapy'),
+                tag: 'physiotherapy',
+              pageUrl: Selectdoctor(title: "Physiotherapy"),
+            ),
             makeCategory(
                 catImage: 'Logos/Doctor/ayurveda.jpg',
                 title: 'Ayurveda',
-                tag: 'ayurveda'),
+                tag: 'ayurveda',
+              pageUrl: Selectdoctor(title: "Arurveda"),
+            ),
             makeCategory(
                 catImage: 'Logos/Doctor/Cancer.jpg',
                 title: 'Cancer',
-                tag: 'Cancer'),
+                tag: 'Cancer',
+              pageUrl: Selectdoctor(title: "Cancer"),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget makeCategory({catImage, title, tag}) {
+  Widget makeCategory({catImage, title, tag, pageUrl}) {
     return AspectRatio(
         aspectRatio: 2 / 2,
         child: Hero(
@@ -89,7 +112,7 @@ class _DoctorsState extends State<Doctors> {
             onTap: () {
               scheduleMicrotask(() {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Selectdoctor(),
+                  builder: (context) => pageUrl,
                 ));
               });
             },
